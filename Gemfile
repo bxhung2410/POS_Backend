@@ -46,3 +46,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'font_awesome5_rails'
 gem 'devise'
 gem 'meta-tags'
+gem 'carrierwave', '~> 2.0'

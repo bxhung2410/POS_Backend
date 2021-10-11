@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_19_040028) do
+ActiveRecord::Schema.define(version: 2021_09_28_143812) do
 
-  create_table "categories", charset: "utf8", collation: "utf8_unicode_ci", force: :cascade do |t|
+  create_table "categories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
   end
 
-  create_table "customers", charset: "utf8", collation: "utf8_unicode_ci", force: :cascade do |t|
+  create_table "customers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
   end
 
-  create_table "foods", charset: "utf8", collation: "utf8_unicode_ci", force: :cascade do |t|
+  create_table "foods", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.integer "quantity"
     t.float "price"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2021_09_19_040028) do
     t.index ["user_id"], name: "index_foods_on_user_id"
   end
 
-  create_table "order_foods", charset: "utf8", collation: "utf8_unicode_ci", force: :cascade do |t|
+  create_table "order_foods", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "order_id"
     t.bigint "food_id"
     t.integer "quantity"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2021_09_19_040028) do
     t.index ["order_id"], name: "index_order_foods_on_order_id"
   end
 
-  create_table "orders", charset: "utf8", collation: "utf8_unicode_ci", force: :cascade do |t|
+  create_table "orders", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "quantity"
     t.float "total_price"
     t.integer "status", default: 0
@@ -55,11 +55,11 @@ ActiveRecord::Schema.define(version: 2021_09_19_040028) do
     t.index ["status"], name: "index_orders_on_status"
   end
 
-  create_table "restaurants", charset: "utf8", collation: "utf8_unicode_ci", force: :cascade do |t|
+  create_table "restaurants", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
   end
 
-  create_table "users", charset: "utf8", collation: "utf8_unicode_ci", force: :cascade do |t|
+  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(version: 2021_09_19_040028) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "username"
     t.integer "role", default: 1
+    t.string "avatar"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

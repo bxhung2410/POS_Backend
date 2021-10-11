@@ -22,4 +22,5 @@ import toastr from 'toastr'
 window.toastr = toastr
 
 import "@fortawesome/fontawesome-free/css/all.css";
-import "./custom"
+import "./custom";
+

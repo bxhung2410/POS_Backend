@@ -32,8 +32,8 @@ class SetupPos < ActiveRecord::Migration[6.1]
     end
 
     create_table :order_foods do |t|
-      t.references :order
-      t.references :food
+      t.belongs_to :order
+      t.belongs_to :food
       t.integer :quantity
       t.float :total_price
     end
