@@ -13,13 +13,17 @@
   <meta name="format-detection" content="telephone=no">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
 
-  <%= stylesheet_pack_tag 'home', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_pack_tag 'home', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'darkmode' %>
+  <%= javascript_pack_tag 'fontawesome' %>
+  <%= javascript_pack_tag 'jquery' %>
+  <%= javascript_pack_tag 'libs' %>
+  <%= javascript_pack_tag 'main' %>
+  <%= javascript_pack_tag 'uikit' %>
+  <%= javascript_pack_tag 'uikit-icons' %>
+  <%= javascript_pack_tag 'cart-process' %>
 
+  <%= stylesheet_link_tag 'home' %>
 
 </head>
-
-<body class="page-showcase">
     <%= yield %>
-</body>
 </html>

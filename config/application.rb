@@ -34,5 +34,6 @@ module PosHungbx
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    config.assets.enabled = true
   end
 end
