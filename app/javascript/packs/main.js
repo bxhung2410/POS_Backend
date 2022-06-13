@@ -71,4 +71,3 @@ function handleTabletChange(e) {
 
 mediaQueryTablet.addListener(handleTabletChange);
 handleTabletChange(mediaQueryTablet);
-

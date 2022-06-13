@@ -1,0 +1,287 @@
+<style>
+    *,
+    *:after,
+    *:before {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+
+    body {
+        font-family: sans-serif;
+        background: #f6f9fa;
+    }
+
+    h1 {
+        color: #ccc;
+        text-align: center;
+    }
+    h4.payment-title {
+        text-align: left;
+        padding: 10px 0px 30px 30px;
+        font-weight: 500;
+        color: #5e6977;
+    }
+    a {
+        color: #ccc;
+        text-decoration: none;
+        outline: none;
+    }
+
+    .tab_container {
+        width: 727px;
+        margin: 50px auto;
+        position: relative;
+        border: 1px solid #eee;
+        border-radius: 7px;
+        background:#fff;
+    }
+
+    input, section {
+        clear: both;
+        padding-top: 10px;
+        display: none;
+    }
+
+    label {
+        font-weight: 700;
+        font-size: 14px;
+        display: block;
+        float: left;
+        padding: 20px 65px;
+        color: #ccc;
+        cursor: pointer;
+        text-decoration: none;
+        text-align: center;
+        background: #fff;
+        margin-bottom: 2px;
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+        border-bottom:2px solid #eee;
+
+    }
+
+    #tab1:checked ~ #content1,
+    #tab2:checked ~ #content2,
+    #tab3:checked ~ #content3{
+        display: block;
+        padding: 20px 0 0 0;
+        color: #999;
+    }
+
+    .tab_container .tab-content h3  {
+        text-align: center;
+    }
+
+    .tab_container [id^="tab"]:checked + label {
+        background: #fff;
+        border-bottom:2px solid #358ed7;
+        color: #358ed7;
+    }
+
+    .tab_container [id^="tab"]:checked + label>span.numberCircle {
+        border: 2px solid #358ed7;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        padding: 3px 5px;
+        text-align: center;
+        font-size: 10px;
+        margin: 3px 8px
+    }
+
+    label:hover {
+        background-color:#eee;
+        border-radius:0px;
+    }
+
+    .numberCircle {
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        padding: 3px 5px;
+        border: 2px solid #ccc;
+        text-align: center;
+        font-size: 10px;
+        margin: 3px 8px
+    }
+
+
+
+
+    .card-image {
+        display: block;
+        background: #fff center center no-repeat;
+        background-size: cover;
+    }
+
+    .card-image > img {
+        display: block;
+        width: 100%;
+    }
+
+
+    .card-list {
+        display: block;
+        margin: 1rem auto;
+        padding: 0;
+        font-size: 0;
+        text-align: center;
+        list-style: none;
+    }
+
+    .card {
+        border-radius: 50px;
+        display: inline-block;
+        width: 30%;
+        margin: 1rem;
+        font-size: 1rem;
+        text-decoration: none;
+        overflow: hidden;
+        box-shadow: 0 0 3rem -1rem rgba(0,0,0,0.5);
+        transition: transform 0.1s ease-in-out, box-shadow 0.1s;
+    }
+
+    .card:hover {
+        transform: translateY(-0.5rem) scale(1.0125);
+        box-shadow: 0 0.5em 3rem -1rem rgba(0,0,0,0.5);
+    }
+
+
+    .input {
+        border-radius: 5px;
+        border-style: solid;
+        border-width: 2px;
+        height: 38px;
+        padding-left: 15px;
+        font-weight: 600;
+        font-size: 11pt;
+        color: #5e6977;
+
+    }
+    input[type="text"] {
+        display: initial;
+        padding:15px
+    }
+
+    a, a:hover {
+        color: inherit;
+        text-decoration: inherit;
+    }
+
+    input[id^="radio"]{
+        display:none;
+    }
+
+    input[id^="radio"] + label
+    {
+        background-image:url("https://www.dropbox.com/s/mnwbybfl4pnzoi4/radio-inactive.png?raw=1");
+        height: 26px;
+        width: 24px;
+        display:inline-block;
+        padding: 0 0 0 0px;
+        cursor:pointer;
+        border-radius: 50%;
+    }
+
+    input[id^="radio"]:checked + label
+    {
+        background-image:url("https://www.dropbox.com/s/8634yi8i1s7fx7w/radio-active.png?raw=1");
+        height: 26px;
+        width: 24px;
+        display:inline-block;
+        padding: 0 0 0 0px;
+        cursor:pointer;
+    }
+    p.credit {
+        text-align:center;
+        color: #ccc;
+    }
+</style>
+
+<body class="page-catalog dm-dark">
+<div class="page-wrapper">
+  <%= render 'shared/header-home'%>
+
+  <main class="page-main">
+    <h1>Payment Page</h1>
+    <p class="credit">Spedito</p>
+    <div class="tab_container">
+      <input id="tab1" type="radio" checked="checked" name="tabs">
+      <label for="tab1"><span class="numberCircle">1</span><span>E-wallet</span></label>
+
+      <input id="tab2" type="radio" name="tabs">
+      <label for="tab2"><span class="numberCircle">2</span><span>E-banking</span></label>
+
+      <input id="tab3" type="radio" name="tabs" >
+      <label for="tab3"><span class="numberCircle">3</span><span>Visa/Mastercard</span></label>
+
+      <section id="content1" class="tab-content">
+        <ul class="card-list">
+
+          <li class="card">
+            <a class="card-image" href="" target="_blank">
+              <img src="https://file.hstatic.net/1000273026/file/momo_logo_82104b6e0b5e4eb2acd50f818112368d_grande.png" alt="MoMo" />
+            </a>
+          </li>
+
+          <li class="card">
+            <a class="card-image" href="" target="_blank">
+              <img src="https://thuthuatmaytinh.vn/wp-content/uploads/2019/02/ZaloPay-logo.png" alt="ZaloPay" />
+            </a>
+          </li>
+
+          <li class="card">
+            <a class="card-image" href="" target="_blank">
+              <img src="https://thuthuatmaytinh.vn/wp-content/uploads/2019/02/ViettelPay-logo.png" alt="ViettelPay" />
+            </a>
+          </li>
+
+        </ul>
+        <p></p>
+      </section>
+
+      <section id="content2" class="tab-content">
+        <ul class="card-list">
+
+          <li class="card">
+            <a class="card-image" href="" target="_blank">
+              <img src="https://www.ocb.com.vn/Uploads/pictures/logo_temp.jpg" alt="OCB" />
+            </a>
+          </li>
+
+          <li class="card">
+            <a class="card-image" href="" target="_blank">
+              <img src="https://static.wixstatic.com/media/9d8ed5_e8f0cd6914be4a50a8c93e800748313a~mv2.jpg/v1/fill/w_1182,h_1182,al_c,q_85/9d8ed5_e8f0cd6914be4a50a8c93e800748313a~mv2.jpg" alt="VIB" />
+            </a>
+          </li>
+
+          <li class="card">
+            <a class="card-image" href="" target="_blank">
+              <img src="https://static.wixstatic.com/media/9d8ed5_268b0b6fef6a47fa9a538959fd19a896~mv2.jpg/v1/fill/w_1182,h_1182,al_c,q_85/9d8ed5_268b0b6fef6a47fa9a538959fd19a896~mv2.jpg" alt="ViettinBank" />
+            </a>
+          </li>
+
+        </ul>
+        <p></p>
+      </section>
+
+      <section id="content3" class="tab-content">
+        <ul class="card-list">
+
+          <li class="card">
+            <a class="card-image" href="" target="_blank">
+              <img src="https://storage.googleapis.com/reward/userfiles/backend/reward/detail/1448856346_4f1bda18726739c4a9385714e9c758e7617a422b.jpg?v=1629886537" alt="OCB" />
+            </a>
+          </li>
+
+        </ul>
+        <p></p>
+      </section>
+    </div>
+
+  </main>
+</div>
+<%= render 'shared/footer-home' %>
+</body>

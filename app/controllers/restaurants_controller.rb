@@ -1,5 +1,8 @@
 class RestaurantsController < ApplicationController
+  before_action :authenticate_user!
+
   before_action :set_restaurant, only: %i[ show edit update destroy ]
+
 
   def home
   end

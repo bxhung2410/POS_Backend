@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   root to: "home#index"
   resources :restaurants
   resources :pages
+  resources :contact
+  resources :payment
+
 end
